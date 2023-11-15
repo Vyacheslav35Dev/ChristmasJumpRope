@@ -5,35 +5,28 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "e5edd6e007ccdb3725736c020a806bafdc6fb0c0"
-    },
-    "com.leopotam.ecs-types": {
-      "version": "https://github.com/Leopotam/ecs-types.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "54470e4fec9cc207b862415370fcd360d5651035"
+      "hash": "1213c31c9ef8325d48e74a52b345c4db242d038b"
     },
     "com.leopotam.ecs-ui": {
       "version": "https://github.com/Leopotam/ecs-ui.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "bd39854042e07589505506475c45000d744f8a4f"
+      "hash": "8c8148b306fce1a3efff776c2cf2da8991c4780d"
     },
     "com.leopotam.ecs-unityintegration": {
       "version": "https://github.com/Leopotam/ecs-unityintegration.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "47a1a8ea26342894459ec478d56856c3f71a7cab"
+      "hash": "063f130aeecea526beaca172ea56bd046781e378"
     },
     "com.leopotam.globals": {
       "version": "https://github.com/Leopotam/globals.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "740d6ddbd9ed39947f2153c63bc2654d04e5b8c8"
+      "hash": "bd471093eb39824b4ec75e82c680b1d33999ec4c"
     },
     "com.unity.2d.animation": {
       "version": "9.0.4",
