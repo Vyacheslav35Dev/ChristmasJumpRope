@@ -11,7 +11,7 @@ using Leopotam.Ecs.UnityIntegration;
 
 using UnityEngine;
 
-sealed class Startup : MonoBehaviour 
+sealed class Bootstrap : MonoBehaviour 
 {
     private EcsWorld _world;
     private EcsSystems _systems;
