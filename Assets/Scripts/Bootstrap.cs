@@ -5,11 +5,13 @@ using Leopotam.Ecs;
 using Leopotam.Ecs.Ui.Components;
 using Leopotam.Ecs.Ui.Systems;
 using LeopotamGroup.Globals;
+using TMPro;
 #if UNITY_EDITOR
 using Leopotam.Ecs.UnityIntegration;
 #endif
 
 using UnityEngine;
+using YG;
 
 sealed class Bootstrap : MonoBehaviour 
 {
@@ -19,7 +21,21 @@ sealed class Bootstrap : MonoBehaviour
 
     public SceneData SceneData;
 
-    private void Start () 
+    public TMP_Text idPlayer;
+    public TMP_Text namePlayer;
+    
+    private void OnEnable() => YandexGame.GetDataEvent += Run;
+    private void OnDisable() => YandexGame.GetDataEvent -= Run;
+
+    private void Awake()
+    {
+        if (YandexGame.SDKEnabled)
+        {
+            Run();
+        }
+    }
+
+    private void Run()
     {
         SceneData.OldScore = PlayerPrefs.GetInt("score");
         if (SceneData.OldScore > 0)
@@ -77,6 +93,8 @@ sealed class Bootstrap : MonoBehaviour
 
     private void OnDestroy () 
     {
+        YandexGame.GetDataEvent -= Run;
+        
         if (_systems != null) 
         {
             _systems.Destroy ();

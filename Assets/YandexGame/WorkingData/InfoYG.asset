@@ -18,10 +18,10 @@ MonoBehaviour:
     authorized: 1
     isMobile: 0
     language: ru
-    name: Player this
-    uniqueID: 000
+    name: Teeeeeester
+    uniqueID: 0123456789
     photo: https://justplaygames.ru/public/icon_player.png
-  AdWhenLoadingScene: 1
+  AdWhenLoadingScene: 0
   showFirstAd: 1
   adDisplayCalls: 0
   fullscreenAdInterval: 60
