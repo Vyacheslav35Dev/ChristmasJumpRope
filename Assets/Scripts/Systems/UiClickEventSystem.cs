@@ -36,13 +36,17 @@ namespace Systems
                         break;
                     case "BtnSelectChar2":
                         var entityData5 = _world.NewEntity();
-                        entityData5.Get<ClickShopEvent>().PlayerSprite = _sceneData.PinguinSprite;
-                        entityData5.Get<ClickShopEvent>().PurchaseId = _sceneData.PurchaseIdPenguin;
+                        entityData5.Get<ShowScreenEvent>().ScreenType = ScreenType.GameScreen;
+                        entityData5.Get<StartWorldEvent>().PlayerSprite = _sceneData.PinguinSprite;
+                        /*entityData5.Get<ClickShopEvent>().PlayerSprite = _sceneData.PinguinSprite;
+                        entityData5.Get<ClickShopEvent>().PurchaseId = _sceneData.PurchaseIdPenguin;*/
                         break;
                     case "BtnSelectChar3":
                         var entityData6 = _world.NewEntity();
-                        entityData6.Get<ClickShopEvent>().PlayerSprite = _sceneData.SnomanSprite;
-                        entityData6.Get<ClickShopEvent>().PurchaseId = _sceneData.PurchaseIdSnoMan;
+                        entityData6.Get<ShowScreenEvent>().ScreenType = ScreenType.GameScreen;
+                        entityData6.Get<StartWorldEvent>().PlayerSprite = _sceneData.SnomanSprite;
+                        /*entityData6.Get<ClickShopEvent>().PlayerSprite = _sceneData.SnomanSprite;
+                        entityData6.Get<ClickShopEvent>().PurchaseId = _sceneData.PurchaseIdSnoMan;*/
                         break;
                     case "BtnWon":
                         var entityData3 = _world.NewEntity();

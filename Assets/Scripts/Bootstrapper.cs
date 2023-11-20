@@ -13,17 +13,14 @@ using Leopotam.Ecs.UnityIntegration;
 using UnityEngine;
 using YG;
 
-sealed class Bootstrap : MonoBehaviour 
+sealed class Bootstrapper : MonoBehaviour 
 {
     private EcsWorld _world;
     private EcsSystems _systems;
     private EcsSystems _phisicSystems;
 
     public SceneData SceneData;
-
-    public TMP_Text idPlayer;
-    public TMP_Text namePlayer;
-    
+   
     private void OnEnable() => YandexGame.GetDataEvent += Run;
     private void OnDisable() => YandexGame.GetDataEvent -= Run;
 
@@ -38,6 +35,8 @@ sealed class Bootstrap : MonoBehaviour
     private void Run()
     {
         SceneData.OldScore = PlayerPrefs.GetInt("score");
+        PlayerPrefs.SetInt("buySlot1", 1);
+        PlayerPrefs.SetInt("buySlot2", 2);
         if (SceneData.OldScore > 0)
         {
             SceneData.Ui.CounterText.text = SceneData.OldScore.ToString();
