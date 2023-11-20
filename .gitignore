@@ -7,6 +7,8 @@
 [Ll]ibrary/
 sysinfo.txt
 [Ll]ogs
+Logs/
+*.log
  
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
