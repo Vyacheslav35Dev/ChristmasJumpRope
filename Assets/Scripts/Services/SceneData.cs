@@ -1,6 +1,7 @@
 ﻿using Leopotam.Ecs;
 using UnityComponents;
 using UnityEngine;
+using YG;
 
 public class SceneData : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class SceneData : MonoBehaviour
     public GameObject World;
 
     public EcsEntity entityForceRopeAnimSpeed;
+
+    public LeaderboardYG LeaderboardYg;
     
     [Header("Store Settings")]
     public string PurchaseIdSnoMan = "snowmanpay";

@@ -8,9 +8,9 @@ namespace YG
     [HelpURL("https://www.notion.so/PluginYG-d457b23eee604b7aa6076116aab647ed#4968547185c2460fb70fd6eceaf101d4")]
     public class DebuggingModeYG : MonoBehaviour
     {
-        [Tooltip("?payload=\nГќГІГ® Г§Г­Г Г·ГҐГ­ГЁГҐ, ГЄГ®ГІГ®Г°Г®ГҐ Г‚Г» ГЎГіГ¤ГҐГІГҐ ГЇГҐГ°ГҐГ¤Г ГўГ ГІГј Г± ГЇГ®Г¬Г®Г№ГјГѕ Deep Linking. ГЊГ®Г¦ГҐГІГҐ Г­Г ГЇГЁГ±Г ГІГј Г±Г«Г®ГўГ®, Г­Г ГЇГ°ГЁГ¬ГҐГ°, debug ГЁ Г¤Г®ГЎГ ГўГЁГІГј Г±ГўГ®Г© ГЇГ Г°Г®Г«Гј, Г­Г ГЇГ°ГЁГ¬ГҐГ°, 123. ГЏГ®Г«ГіГ·ГЁГІГ±Гї debug123.")]
+        [Tooltip("?payload=\nЭто значение, которое Вы будете передавать с помощью Deep Linking. Можете написать слово, например, debug и добавить свой пароль, например, 123. Получится debug123.")]
         public string payloadPassword = "debug123";
-        [Tooltip("ГЋГІГ®ГЎГ°Г Г¦ГҐГ­ГЁГҐ ГЇГ Г­ГҐГ«ГЁ ГіГЇГ°Г ГўГ«ГҐГ­ГЁГї Гў Unity Editor")]
+        [Tooltip("Отображение панели управления в Unity Editor")]
         public bool debuggingInEditor;
 
         [Serializable]
@@ -94,7 +94,7 @@ namespace YG
 
         public void AuthCheckButton()
         {
-            GameObject.FindObjectOfType<YandexGame>().InitializationSDK();
+            GameObject.FindObjectOfType<YandexGame>()._RequestAuth();
         }
 
         public void AuthDialogButton()

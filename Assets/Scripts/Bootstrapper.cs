@@ -20,21 +20,27 @@ sealed class Bootstrapper : MonoBehaviour
     private EcsSystems _phisicSystems;
 
     public SceneData SceneData;
-   
+
+    public YandexGame yg;
+    
     private void OnEnable() => YandexGame.GetDataEvent += Run;
+
     private void OnDisable() => YandexGame.GetDataEvent -= Run;
 
     private void Awake()
     {
-        if (YandexGame.SDKEnabled)
+        if (YandexGame.SDKEnabled == true)
         {
             Run();
         }
     }
-
+    
     private void Run()
     {
-        SceneData.OldScore = PlayerPrefs.GetInt("score");
+        var score = YandexGame.savesData.score;
+        
+        SceneData.OldScore = score;
+
         PlayerPrefs.SetInt("buySlot1", 1);
         PlayerPrefs.SetInt("buySlot2", 2);
         if (SceneData.OldScore > 0)
@@ -92,8 +98,6 @@ sealed class Bootstrapper : MonoBehaviour
 
     private void OnDestroy () 
     {
-        YandexGame.GetDataEvent -= Run;
-        
         if (_systems != null) 
         {
             _systems.Destroy ();

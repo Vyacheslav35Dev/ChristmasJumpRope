@@ -2,6 +2,7 @@
 using Leopotam.Ecs;
 using UnityComponents;
 using UnityEngine;
+using YG;
 
 namespace Systems
 {
@@ -9,7 +10,7 @@ namespace Systems
     {
         private readonly SceneData _sceneData;
         private EcsFilter<FinishWorldEvent> _filter;
-        
+
         public void Run()
         {
             foreach (var i in _filter)
@@ -24,7 +25,11 @@ namespace Systems
                 
                 if (_sceneData.OldScore < _sceneData.Score)
                 {
-                    PlayerPrefs.SetInt("score", _sceneData.Score);
+                    Debug.Log("Save progress");
+                    YandexGame.savesData.score = _sceneData.Score;
+                    YandexGame.SaveProgress();
+                    _sceneData.LeaderboardYg.NewScore(_sceneData.Score);
+                    _sceneData.LeaderboardYg.UpdateLB();
                 }
                 
                 entity.Get<ShowScreenEvent>().ScreenType = ScreenType.WonScreen;

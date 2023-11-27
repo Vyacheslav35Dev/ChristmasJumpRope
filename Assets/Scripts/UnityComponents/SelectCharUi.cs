@@ -6,7 +6,7 @@ namespace UnityComponents
     public class SelectCharUi : Screen
     {
         private const string textPay = "0.99 $";
-        private const string textPlay = "PLAY";
+        private const string textPlay = "ИГРАТЬ";
         
         public TextMeshProUGUI TextBtnSlot1;
         public TextMeshProUGUI TextBtnSlot2;
