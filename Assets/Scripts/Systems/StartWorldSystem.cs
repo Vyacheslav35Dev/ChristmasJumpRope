@@ -19,7 +19,7 @@ namespace Systems
                 _sceneData.isRunGame = true;
                 _sceneData.PlayerSprite.sprite = data.PlayerSprite;
                 _sceneData.World.SetActive(true);
-                _sceneData.Score = 0;
+                _sceneData.NewScore = 0;
                 _sceneData.Ui.SetTextCounter(0);
                 entity.Get<ForceRopeAnimComponent>().Animator = _sceneData.RopeController.Anim;
                 entity.Get<ForceRopeAnimComponent>().coofSpeed = _sceneData.coofSpeed;

@@ -1,12 +1,13 @@
 ﻿using Leopotam.Ecs;
 using UnityComponents;
 using UnityEngine;
+using UnityEngine.Serialization;
 using YG;
 
 public class SceneData : MonoBehaviour
 {
     public int OldScore;
-    public int Score;
+    public int NewScore;
 
     public bool isRunGame;
 

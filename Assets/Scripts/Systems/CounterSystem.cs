@@ -14,8 +14,8 @@ namespace Systems
             {
                 var entity = _filter.GetEntity(i);
                 var data = _filter.Get1(i);
-                _sceneData.Score++;
-                _sceneData.Ui.SetTextCounter(_sceneData.Score);
+                _sceneData.NewScore++;
+                _sceneData.Ui.SetTextCounter(_sceneData.NewScore);
                 entity.Del<CounterPointEvent>();
             }
         }
