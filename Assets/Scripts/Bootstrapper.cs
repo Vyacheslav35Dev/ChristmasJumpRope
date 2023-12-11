@@ -37,15 +37,13 @@ sealed class Bootstrapper : MonoBehaviour
     
     private void Run()
     {
-        var score = YandexGame.savesData.score;
+        SceneData.Score = YandexGame.auth ? YandexGame.savesData.score : PlayerPrefs.GetInt("Score", 0);
         
-        SceneData.OldScore = score;
-
         PlayerPrefs.SetInt("buySlot1", 1);
         PlayerPrefs.SetInt("buySlot2", 2);
-        if (SceneData.OldScore > 0)
+        if (SceneData.Score > 0)
         {
-            SceneData.Ui.CounterText.text = SceneData.OldScore.ToString();
+            SceneData.Ui.CounterText.text = SceneData.Score.ToString();
         }
         else
         {

@@ -23,16 +23,25 @@ namespace Systems
                 _sceneData.RopeController.Reset();
                 _sceneData.entityForceRopeAnimSpeed.Del<ForceRopeAnimComponent>();
                 
-                if (_sceneData.OldScore < _sceneData.NewScore)
+                if (_sceneData.NewScore > _sceneData.Score)
                 {
-                    Debug.Log("Save progress");
-                    YandexGame.savesData.score = _sceneData.NewScore;
-                    YandexGame.SaveProgress();
-                    _sceneData.LeaderboardYg.NewScore(_sceneData.NewScore);
-                    _sceneData.LeaderboardYg.UpdateLB();
+                    if (YandexGame.auth)
+                    {
+                        Debug.Log("Save progress");
+                        _sceneData.Score = _sceneData.NewScore;
+                        YandexGame.savesData.score = _sceneData.NewScore;
+                        YandexGame.SaveProgress();
+                        _sceneData.LeaderboardYg.NewScore(_sceneData.NewScore);
+                        _sceneData.LeaderboardYg.UpdateLB();
+                    }
+                    else
+                    {
+                        _sceneData.Score = _sceneData.NewScore;
+                        PlayerPrefs.SetInt("Score", _sceneData.Score);
+                    }
                 }
-                _sceneData.Ui.SetTextCounter(YandexGame.savesData.score);
-                
+                _sceneData.Ui.SetTextCounter(_sceneData.Score);
+
                 entity.Get<ShowScreenEvent>().ScreenType = ScreenType.WonScreen;
                 entity.Del<FinishWorldEvent>();
             }

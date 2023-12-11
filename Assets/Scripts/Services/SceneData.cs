@@ -6,7 +6,7 @@ using YG;
 
 public class SceneData : MonoBehaviour
 {
-    public int OldScore;
+    public int Score;
     public int NewScore;
 
     public bool isRunGame;
